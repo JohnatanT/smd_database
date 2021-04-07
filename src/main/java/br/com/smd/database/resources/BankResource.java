@@ -31,7 +31,7 @@ public class BankResource {
 		return new ResponseEntity<BankOutputDTO>(bank, HttpStatus.CREATED);
 	}
 	
-	@GetMapping(value = "{cnpj}")
+	@GetMapping(value = "cnpj/{cnpj}")
 	@ResponseBody
 	public ResponseEntity<BankOutputDTO> getBankByCnpj(@PathVariable(name = "cnpj") String cnpj) {
 		BankOutputDTO bank = bankService.getBankByCnpj(cnpj);
@@ -42,7 +42,7 @@ public class BankResource {
 		return new ResponseEntity<BankOutputDTO>(HttpStatus.NOT_FOUND);
 	}
 	
-	@GetMapping(value = "{id}")
+	@GetMapping(value = "id/{id}")
 	@ResponseBody
 	public ResponseEntity<BankOutputDTO> getBankById(@PathVariable(name = "id") Long id) {
 		BankOutputDTO bank = bankService.getBankById(id);

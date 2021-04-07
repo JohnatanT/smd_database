@@ -32,7 +32,7 @@ public class AgencyResource {
 		return new ResponseEntity<AgencyOutputDTO>(agency, HttpStatus.CREATED);
 	}
 	
-	@GetMapping(value = "{number}")
+	@GetMapping(value = "number/{number}")
 	@ResponseBody
 	public ResponseEntity<AgencyOutputDTO> getBankByCnpj(@PathVariable(name = "number") String number) {
 		AgencyOutputDTO agency = agencyService.getAgencyByNumber(number);
@@ -43,7 +43,7 @@ public class AgencyResource {
 		return new ResponseEntity<AgencyOutputDTO>(HttpStatus.NOT_FOUND);
 	}
 	
-	@GetMapping(value = "{id}")
+	@GetMapping(value = "id/{id}")
 	@ResponseBody
 	public ResponseEntity<AgencyOutputDTO> getBankByCnpj(@PathVariable(name = "id") Long id) {
 		AgencyOutputDTO agency = agencyService.getAgencyById(id);

@@ -31,7 +31,7 @@ public class ManagerResource {
 		return new ResponseEntity<ManagerOutputDTO>(manager, HttpStatus.CREATED);
 	}
 	
-	@GetMapping(value = "{id}")
+	@GetMapping(value = "id/{id}")
 	@ResponseBody
 	public ResponseEntity<ManagerOutputDTO> getBankByCnpj(@PathVariable(name = "id") Long id) {
 		ManagerOutputDTO manager = managerService.getManagerById(id);
